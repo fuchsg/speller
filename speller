@@ -6,7 +6,8 @@ import re
 import sys
 
 import argparse
-parser = argparse.ArgumentParser(description="Spelling strings into words per character.")
+formatter = lambda prog: argparse.HelpFormatter(prog, max_help_position=40)
+parser = argparse.ArgumentParser(description="Spelling strings into words per character.", formatter_class=formatter)
 parser.add_argument("string", nargs="?")
 #parser.add_argument("-a", "--alphabet", default="nato", choices=os.listdir("./alphabets"), help="spelling alphabet to use")
 parser.add_argument("-a", "--alphabet", default="nato", help="spelling alphabet to use")
